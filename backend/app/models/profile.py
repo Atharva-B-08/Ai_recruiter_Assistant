@@ -1,12 +1,12 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, Field
 
 class Profile(BaseModel):
-    name: str
-    title: str
-    location: str
-    Country: str
+    name: str = Field(min_length=1)
+    title: str = Field(min_length=1)
+    location: str = Field(min_length=1)
+    Country: str = Field(min_length=1)
     email: EmailStr
-    phone: str
-    summary: str
+    phone: str = Field(min_length=1)
+    summary: str = Field(min_length=1)
     open_to_work: bool
-    preferred_roles: list[str]
+    preferred_roles: list[str] = Field(min_length=1)
