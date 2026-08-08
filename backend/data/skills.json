@@ -1,0 +1,19 @@
+{
+  "languages": ["Java", "Python", "JavaScript", "SQL"],
+  "backend": [
+    "Spring Boot",
+    "Spring MVC",
+    "Spring Security",
+    "Hibernate",
+    "JPA",
+    "REST APIs",
+    "JWT"
+  ],
+  "frontend": ["React", "HTML", "CSS", "Tailwind CSS"],
+  "database": ["MySQL", "PostgreSQL"],
+  "messaging platforms": ["kafka"],
+  "tools": ["Git", "GitHub", "Postman", "IntelliJ IDEA", "VS Code"],
+  "cloud": ["Vercel", "Supabase", "Docker"],
+  "version_control": ["GitHub", "git"],
+  "other": ["Agile Methodology"]
+}

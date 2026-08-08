@@ -1,0 +1,33 @@
+[
+  {
+    "degree": "Bachelor of Engineering",
+    "branch": "Computer Engineering",
+    "college": "Atharva College of Engineering",
+    "university": "University of Mumbai",
+    "cgpa": 8.18,
+    "percentage": 72.31,
+    "status": "Completed",
+    "start_year": 2023,
+    "end_year": 2026
+  },
+  {
+    "degree": "12 th Standard - Higher Secondary",
+    "branch": "Science",
+    "college": "Ramniranjan Jhunjhunwala College",
+    "university": "HSC State Board",
+    "status": "Completed",
+    "start_year": 2021,
+    "end_year": 2023,
+    "percentage": 73.33
+  },
+  {
+    "degree": "10 th Standard",
+    "branch": "",
+    "college": "Saraswati Vidya Niketan",
+    "university": "SSC State Board",
+    "status": "Completed",
+    "start_year": 2019,
+    "end_year": 2021,
+    "percentage": 88.2
+  }
+]

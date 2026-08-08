@@ -1,0 +1,135 @@
+[
+  {
+    "id": "fintrack",
+    "name": "FinTrack",
+    "slug": "fintrack",
+    "type": "Personal Project",
+    "status": "Completed",
+    "duration": "2025",
+    "team_size": 1,
+    "role": "Full Stack Developer",
+    "overview": "FinTrack is a full-stack personal finance management application that helps users efficiently manage their financial activities. The application enables users to track income, expenses, budgets, multiple accounts, and recurring transactions while providing detailed financial analytics through an interactive dashboard. The project was built to provide users with a secure, scalable, and user-friendly platform for managing personal finances.",
+
+    "problem_statement": "Many people struggle to manage their daily expenses, monthly budgets, and savings using spreadsheets or manual records. Existing solutions are often complicated or contain unnecessary features. FinTrack was developed to provide a simple, secure, and modern finance management system that allows users to organize their financial data in one place.",
+
+    "objectives": [
+      "Provide a secure personal finance management system.",
+      "Track income and expenses.",
+      "Manage monthly budgets.",
+      "Provide financial insights using analytics.",
+      "Support recurring transactions.",
+      "Maintain multiple financial accounts."
+    ],
+
+    "technologies": {
+      "backend": [
+        "Java",
+        "Spring Boot",
+        "Spring Security",
+        "Spring Data JPA",
+        "Hibernate",
+        "JWT Authentication"
+      ],
+      "frontend": ["React", "Tailwind CSS", "ShadCN UI", "React Hook Form"],
+      "database": ["PostgreSQL", "Supabase"],
+      "tools": ["Git", "GitHub", "Postman", "IntelliJ IDEA"]
+    },
+
+    "features": [
+      "User Registration and Login",
+      "JWT Authentication",
+      "Budget Management",
+      "Income Tracking",
+      "Expense Tracking",
+      "Analytics Dashboard",
+      "Category Management",
+      "Multiple Accounts",
+      "Recurring Transactions",
+      "Receipt Upload",
+      "REST APIs"
+    ],
+
+    "architecture": {
+      "pattern": "Layered Architecture",
+      "layers": ["Controller", "Service", "Repository", "Database"]
+    },
+
+    "database_design": {
+      "entities": ["User", "Account", "Transaction", "Budget", "Category"],
+      "relationships": [
+        "One User can own multiple Accounts.",
+        "One Account contains multiple Transactions.",
+        "One User can create multiple Budgets."
+      ]
+    },
+
+    "authentication": {
+      "method": "JWT Authentication",
+      "flow": [
+        "User logs in.",
+        "Backend validates credentials.",
+        "JWT token is generated.",
+        "Frontend stores the token.",
+        "Every protected request includes the JWT token.",
+        "Backend validates the token before processing the request."
+      ]
+    },
+
+    "my_contributions": [
+      "Designed the backend architecture.",
+      "Developed REST APIs using Spring Boot.",
+      "Implemented JWT-based authentication and authorization.",
+      "Designed the PostgreSQL database schema.",
+      "Integrated frontend with backend APIs.",
+      "Implemented budget and transaction management modules.",
+      "Tested APIs using Postman.",
+      "Deployed the frontend on Vercel."
+    ],
+
+    "challenges": [
+      "Implementing secure JWT authentication.",
+      "Managing entity relationships using JPA.",
+      "Handling CORS between frontend and backend.",
+      "Designing reusable REST APIs.",
+      "Maintaining clean project architecture.",
+      "Debugging deployment issues."
+    ],
+
+    "learnings": [
+      "Building scalable backend applications using Spring Boot.",
+      "Designing RESTful APIs.",
+      "Database schema design using PostgreSQL.",
+      "Authentication and authorization using JWT.",
+      "Full-stack application development.",
+      "Debugging and deployment."
+    ],
+
+    "future_improvements": [
+      "AI-powered expense categorization.",
+      "OCR-based receipt scanning.",
+      "Email notifications.",
+      "Cloud deployment.",
+      "Multi-currency support.",
+      "Export reports as PDF and Excel.",
+      "Mobile application."
+    ],
+
+    "skills_demonstrated": [
+      "Java",
+      "Spring Boot",
+      "REST APIs",
+      "React",
+      "PostgreSQL",
+      "JWT",
+      "Problem Solving",
+      "Database Design",
+      "API Development",
+      "Backend Development"
+    ],
+
+    "github": "https://github.com/Atharva-B-08/fintrack-app",
+    "live_demo": "",
+    "images": [],
+    "resume_highlight": "Developed a production-style full-stack personal finance management application using Spring Boot, React, PostgreSQL, and JWT authentication."
+  }
+]
