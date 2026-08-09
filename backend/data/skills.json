@@ -11,7 +11,7 @@
   ],
   "frontend": ["React", "HTML", "CSS", "Tailwind CSS"],
   "database": ["MySQL", "PostgreSQL"],
-  "messaging platforms": ["kafka"],
+  "messaging_platforms": ["kafka"],
   "tools": ["Git", "GitHub", "Postman", "IntelliJ IDEA", "VS Code"],
   "cloud": ["Vercel", "Supabase", "Docker"],
   "version_control": ["GitHub", "git"],
