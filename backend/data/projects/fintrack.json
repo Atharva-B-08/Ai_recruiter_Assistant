@@ -2,13 +2,13 @@
   {
     "id": "fintrack",
     "name": "FinTrack",
-    "slug": "fintrack",
     "type": "Personal Project",
-    "status": "Completed",
+    "role": "Full Stack Developer",
     "duration": "2025",
     "team_size": 1,
-    "role": "Full Stack Developer",
-    "overview": "FinTrack is a full-stack personal finance management application that helps users efficiently manage their financial activities. The application enables users to track income, expenses, budgets, multiple accounts, and recurring transactions while providing detailed financial analytics through an interactive dashboard. The project was built to provide users with a secure, scalable, and user-friendly platform for managing personal finances.",
+    "status": "Completed",
+
+    "summary": "FinTrack is a full-stack personal finance management application that helps users efficiently manage their financial activities. The application enables users to track income, expenses, budgets, multiple accounts, and recurring transactions while providing detailed financial analytics through an interactive dashboard. The project was built to provide users with a secure, scalable, and user-friendly platform for managing personal finances.",
 
     "problem_statement": "Many people struggle to manage their daily expenses, monthly budgets, and savings using spreadsheets or manual records. Existing solutions are often complicated or contain unnecessary features. FinTrack was developed to provide a simple, secure, and modern finance management system that allows users to organize their financial data in one place.",
 
@@ -30,9 +30,24 @@
         "Hibernate",
         "JWT Authentication"
       ],
-      "frontend": ["React", "Tailwind CSS", "ShadCN UI", "React Hook Form"],
-      "database": ["PostgreSQL", "Supabase"],
-      "tools": ["Git", "GitHub", "Postman", "IntelliJ IDEA"]
+      "frontend": [
+        "React",
+        "Tailwind CSS",
+        "ShadCN UI",
+        "React Hook Form"
+      ],
+      "database": [
+        "PostgreSQL",
+        "Supabase"
+      ],
+      "authentication": [],
+      "machine_learning": [],
+      "tools": [
+        "Git",
+        "GitHub",
+        "Postman",
+        "IntelliJ IDEA"
+      ]
     },
 
     "features": [
@@ -51,11 +66,23 @@
 
     "architecture": {
       "pattern": "Layered Architecture",
-      "layers": ["Controller", "Service", "Repository", "Database"]
+      "layers": [
+        "Controller",
+        "Service",
+        "Repository",
+        "Database"
+      ]
     },
 
-    "database_design": {
-      "entities": ["User", "Account", "Transaction", "Budget", "Category"],
+    "database": {
+      "database_name": "PostgreSQL",
+      "tables": [
+        "User",
+        "Account",
+        "Transaction",
+        "Budget",
+        "Category"
+      ],
       "relationships": [
         "One User can own multiple Accounts.",
         "One Account contains multiple Transactions.",
@@ -63,17 +90,29 @@
       ]
     },
 
-    "authentication": {
-      "method": "JWT Authentication",
-      "flow": [
-        "User logs in.",
-        "Backend validates credentials.",
-        "JWT token is generated.",
-        "Frontend stores the token.",
-        "Every protected request includes the JWT token.",
-        "Backend validates the token before processing the request."
-      ]
+    "api_modules": [
+      "Authentication Module",
+      "Budget Management Module",
+      "Transaction Management Module",
+      "Account Management Module",
+      "Category Management Module"
+    ],
+
+    "security": {
+      "authentication": "JWT Authentication",
+      "authorization": "",
+      "password_encryption": ""
     },
+
+    "workflow": [
+      "User registers or logs into the application.",
+      "Backend validates the user's credentials.",
+      "JWT token is generated after successful authentication.",
+      "Frontend uses the JWT token for protected requests.",
+      "Backend validates the token before processing protected requests.",
+      "Users can manage budgets, transactions, accounts, and categories.",
+      "Financial data is displayed through the analytics dashboard."
+    ],
 
     "my_contributions": [
       "Designed the backend architecture.",
@@ -93,6 +132,15 @@
       "Designing reusable REST APIs.",
       "Maintaining clean project architecture.",
       "Debugging deployment issues."
+    ],
+
+    "solutions": [
+      "Implemented JWT-based authentication and authorization.",
+      "Used JPA and Hibernate to manage entity relationships.",
+      "Configured CORS between the frontend and backend.",
+      "Designed reusable REST API endpoints.",
+      "Separated application logic into appropriate backend layers.",
+      "Debugged and resolved deployment-related issues."
     ],
 
     "learnings": [
@@ -130,6 +178,7 @@
     "github": "https://github.com/Atharva-B-08/fintrack-app",
     "live_demo": "",
     "images": [],
-    "resume_highlight": "Developed a production-style full-stack personal finance management application using Spring Boot, React, PostgreSQL, and JWT authentication."
+
+    "resume_description": "Developed a production-style full-stack personal finance management application using Spring Boot, React, PostgreSQL, and JWT authentication."
   }
 ]

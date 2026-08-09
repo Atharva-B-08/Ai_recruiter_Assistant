@@ -1,130 +1,180 @@
-{
-  "id": "smart-contact-manager",
-  "name": "Smart Contact Manager",
-  "type": "Personal Project",
-  "role": "Full Stack Developer",
-  "status": "Completed",
+[
+  {
+    "id": "smart-contact-manager",
+    "name": "Smart Contact Manager",
+    "type": "Personal Project",
+    "role": "Full Stack Developer",
+    "duration": "2024",
+    "team_size": 1,
+    "status": "Completed",
 
-  "summary": "Smart Contact Manager is a secure web application that allows users to store, organize, search, update, and manage their personal contacts in one place. The application provides authentication, profile management, contact image uploads, and password recovery while ensuring that each user's contacts remain private and secure.",
+    "summary": "Smart Contact Manager is a secure web application that allows users to store, organize, search, update, and manage their personal contacts in one place. The application provides authentication, profile management, contact image uploads, and password recovery while ensuring that each user's contacts remain private and secure.",
 
-  "problem_statement": "Managing personal contacts across notebooks, spreadsheets, or multiple devices is inconvenient and can lead to data loss or disorganization. There was a need for a secure platform where users could access and manage their contacts anytime while ensuring data privacy.",
+    "problem_statement": "Managing personal contacts across notebooks, spreadsheets, or multiple devices is inconvenient and can lead to data loss or disorganization. There was a need for a secure platform where users could access and manage their contacts anytime while ensuring data privacy.",
 
-  "objective": "To build a secure contact management application with user authentication, contact organization, profile management, and password recovery using modern backend technologies.",
+    "objectives": [
+      "Build a secure contact management application.",
+      "Provide user authentication and authorization.",
+      "Allow users to organize and manage contacts.",
+      "Provide profile management functionality.",
+      "Support contact image uploads.",
+      "Provide OTP-based password recovery."
+    ],
 
-  "my_role": "I designed and developed the complete backend using Spring Boot, implemented Spring Security for authentication and authorization, designed the MySQL database schema, developed CRUD functionality for contacts, integrated image upload, implemented OTP-based password recovery, and connected the frontend with backend services.",
+    "technologies": {
+      "backend": [
+        "Java",
+        "Spring Boot",
+        "Spring MVC",
+        "Spring Security",
+        "Spring Data JPA",
+        "Hibernate"
+      ],
+      "frontend": [
+        "Thymeleaf",
+        "Bootstrap",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "database": [
+        "MySQL"
+      ],
+      "authentication": [
+        "Spring Security",
+        "BCrypt Password Encoding"
+      ],
+      "machine_learning": [],
+      "tools": [
+        "Git",
+        "GitHub",
+        "Postman",
+        "IntelliJ IDEA"
+      ]
+    },
 
-  "technologies": {
-    "backend": [
+    "features": [
+      "User Registration",
+      "Secure Login",
+      "Spring Security Authentication",
+      "Contact CRUD Operations",
+      "Search Contacts",
+      "Profile Management",
+      "Contact Image Upload",
+      "Password Recovery using OTP",
+      "Responsive User Interface",
+      "User-specific Contact Access"
+    ],
+
+    "architecture": {
+      "pattern": "MVC Architecture",
+      "layers": [
+        "Controller",
+        "Service",
+        "Repository",
+        "Database"
+      ]
+    },
+
+    "database": {
+      "database_name": "MySQL",
+      "tables": [
+        "User",
+        "Contact"
+      ],
+      "relationships": [
+        "One User can have multiple Contacts.",
+        "Users can only access their own Contacts."
+      ]
+    },
+
+    "api_modules": [
+      "Authentication Module",
+      "User Module",
+      "Contact Management Module",
+      "Password Recovery Module",
+      "Image Upload Module"
+    ],
+
+    "security": {
+      "authentication": "Spring Security",
+      "authorization": "Authenticated users can only access their own contacts.",
+      "password_encryption": "BCrypt"
+    },
+
+    "workflow": [
+      "User registers an account.",
+      "User logs in securely using Spring Security.",
+      "Authenticated users can create, update, delete, and search contacts.",
+      "Users can upload profile images for contacts.",
+      "Forgot password functionality generates an OTP for password reset.",
+      "Only the owner of a contact can access or modify it."
+    ],
+
+    "my_contributions": [
+      "Designed and developed the complete backend using Spring Boot.",
+      "Implemented Spring Security for authentication and authorization.",
+      "Designed the MySQL database schema.",
+      "Developed CRUD functionality for contacts.",
+      "Integrated image upload functionality.",
+      "Implemented OTP-based password recovery.",
+      "Connected the frontend with backend services."
+    ],
+
+    "challenges": [
+      "Configuring Spring Security authentication.",
+      "Implementing role-based authorization.",
+      "Handling image uploads securely.",
+      "Ensuring users could only access their own contacts.",
+      "Implementing OTP-based password recovery.",
+      "Managing entity relationships using JPA."
+    ],
+
+    "solutions": [
+      "Configured Spring Security with custom authentication.",
+      "Used BCrypt to encrypt user passwords.",
+      "Implemented user-contact relationships using JPA.",
+      "Validated uploaded files before storing them.",
+      "Separated business logic into the service layer.",
+      "Tested all APIs and application flows thoroughly."
+    ],
+
+    "learnings": [
+      "Learned secure authentication using Spring Security.",
+      "Improved understanding of MVC architecture.",
+      "Gained practical experience with Hibernate and JPA.",
+      "Learned password encryption using BCrypt.",
+      "Improved database relationship design.",
+      "Strengthened debugging and backend development skills."
+    ],
+
+    "future_improvements": [
+      "Migrate frontend to React.",
+      "Develop REST APIs for mobile applications.",
+      "Cloud image storage using AWS S3 or Cloudinary.",
+      "Contact sharing between users.",
+      "Import and export contacts using CSV or Excel.",
+      "Deploy the application on cloud platforms."
+    ],
+
+    "skills_demonstrated": [
       "Java",
       "Spring Boot",
-      "Spring MVC",
       "Spring Security",
-      "Spring Data JPA",
-      "Hibernate"
+      "Hibernate",
+      "JPA",
+      "MySQL",
+      "MVC Architecture",
+      "CRUD Operations",
+      "Authentication",
+      "Database Design",
+      "Problem Solving"
     ],
-    "frontend": ["Thymeleaf", "Bootstrap", "HTML", "CSS", "JavaScript"],
-    "database": ["MySQL"],
-    "authentication": ["Spring Security", "BCrypt Password Encoding"],
-    "tools": ["Git", "GitHub", "Postman", "IntelliJ IDEA"]
-  },
 
-  "features": [
-    "User Registration",
-    "Secure Login",
-    "Spring Security Authentication",
-    "Contact CRUD Operations",
-    "Search Contacts",
-    "Profile Management",
-    "Contact Image Upload",
-    "Password Recovery using OTP",
-    "Responsive User Interface",
-    "User-specific Contact Access"
-  ],
+    "github": "",
+    "live_demo": "",
+    "images": [],
 
-  "architecture": {
-    "architecture_pattern": "MVC Architecture",
-    "layers": ["Controller", "Service", "Repository", "Database"]
-  },
-
-  "database": {
-    "database_name": "MySQL",
-    "tables": ["User", "Contact"]
-  },
-
-  "api_modules": [
-    "Authentication Module",
-    "User Module",
-    "Contact Management Module",
-    "Password Recovery Module",
-    "Image Upload Module"
-  ],
-
-  "security": {
-    "authentication": "Spring Security",
-    "authorization": "Authenticated users can only access their own contacts.",
-    "password_encryption": "BCrypt"
-  },
-
-  "workflow": [
-    "User registers an account.",
-    "User logs in securely using Spring Security.",
-    "Authenticated users can create, update, delete, and search contacts.",
-    "Users can upload profile images for contacts.",
-    "Forgot password functionality generates an OTP for password reset.",
-    "Only the owner of a contact can access or modify it."
-  ],
-
-  "challenges": [
-    "Configuring Spring Security authentication.",
-    "Implementing role-based authorization.",
-    "Handling image uploads securely.",
-    "Ensuring users could only access their own contacts.",
-    "Implementing OTP-based password recovery.",
-    "Managing entity relationships using JPA."
-  ],
-
-  "solutions": [
-    "Configured Spring Security with custom authentication.",
-    "Used BCrypt to encrypt user passwords.",
-    "Implemented user-contact relationships using JPA.",
-    "Validated uploaded files before storing them.",
-    "Separated business logic into the service layer.",
-    "Tested all APIs and application flows thoroughly."
-  ],
-
-  "skills_demonstrated": [
-    "Java",
-    "Spring Boot",
-    "Spring Security",
-    "Hibernate",
-    "JPA",
-    "MySQL",
-    "MVC Architecture",
-    "CRUD Operations",
-    "Authentication",
-    "Database Design",
-    "Problem Solving"
-  ],
-
-  "learning_outcomes": [
-    "Learned secure authentication using Spring Security.",
-    "Improved understanding of MVC architecture.",
-    "Gained practical experience with Hibernate and JPA.",
-    "Learned password encryption using BCrypt.",
-    "Improved database relationship design.",
-    "Strengthened debugging and backend development skills."
-  ],
-
-  "future_improvements": [
-    "Migrate frontend to React.",
-    "Develop REST APIs for mobile applications.",
-    "Cloud image storage using AWS S3 or Cloudinary.",
-    "Contact sharing between users.",
-    "Import and export contacts using CSV or Excel.",
-    "Deploy the application on cloud platforms."
-  ],
-
-  "github": "",
-  "live_demo": "",
-  "resume_description": "Developed a secure contact management application using Spring Boot, Spring Security, Hibernate, Thymeleaf, and MySQL with authentication, CRUD operations, image upload, and OTP-based password recovery."
-}
+    "resume_description": "Developed a secure contact management application using Spring Boot, Spring Security, Hibernate, Thymeleaf, and MySQL with authentication, CRUD operations, image upload, and OTP-based password recovery."
+  }
+]

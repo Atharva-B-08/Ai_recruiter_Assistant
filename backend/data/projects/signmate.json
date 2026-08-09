@@ -1,121 +1,146 @@
-{
-  "id": "signmate",
-  "name": "SignMate - Sign Language Interpreter",
-  "type": "Academic Project",
-  "role": "Machine Learning Developer",
-  "status": "Completed",
+[
+  {
+    "id": "signmate",
+    "name": "SignMate - Sign Language Interpreter",
+    "type": "Academic Project",
+    "role": "Machine Learning Developer",
+    "duration": "2023",
+    "team_size": 1,
+    "status": "Completed",
 
-  "summary": "SignMate is an AI-powered sign language interpretation system that recognizes hand gestures using a deep learning model and converts them into readable text. The application aims to reduce communication barriers between individuals who use sign language and those who do not by providing real-time gesture recognition.",
+    "summary": "SignMate is an AI-powered sign language interpretation system that recognizes hand gestures using a deep learning model and converts them into readable text. The application aims to reduce communication barriers between individuals who use sign language and those who do not by providing real-time gesture recognition.",
 
-  "problem_statement": "Communication between hearing-impaired individuals and people unfamiliar with sign language can be challenging. Existing solutions are often expensive, require specialized hardware, or support only a limited vocabulary. SignMate was developed as an affordable and accessible solution capable of recognizing common sign language gestures in real time.",
+    "problem_statement": "Communication between hearing-impaired individuals and people unfamiliar with sign language can be challenging. Existing solutions are often expensive, require specialized hardware, or support only a limited vocabulary. SignMate was developed as an affordable and accessible solution capable of recognizing common sign language gestures in real time.",
 
-  "objective": "To build a lightweight AI-based application that recognizes sign language gestures using computer vision and deep learning, enabling faster and more effective communication.",
-
-  "my_role": "I participated in designing the machine learning pipeline, preparing the training dataset, training the deep learning model using Teachable Machine, converting the model to TensorFlow Lite, integrating it into the application, and testing prediction accuracy.",
-
-  "technologies": {
-    "backend": [],
-    "frontend": [],
-    "database": [],
-    "machine_learning": [
-      "Python",
-      "TensorFlow Lite",
-      "TensorFlow",
-      "MobileNet",
-      "Teachable Machine",
-      "NumPy",
-      "OpenCV"
+    "objectives": [
+      "Build a lightweight AI-based sign language interpretation application.",
+      "Recognize sign language gestures using computer vision.",
+      "Use deep learning for image classification.",
+      "Provide real-time gesture recognition.",
+      "Convert recognized gestures into readable text."
     ],
-    "tools": ["VS Code", "Git", "GitHub"]
-  },
 
-  "features": [
-    "Real-time gesture recognition",
-    "Image classification using deep learning",
-    "Lightweight TensorFlow Lite model",
-    "Fast prediction speed",
-    "Simple and user-friendly interface",
-    "Recognition of predefined sign language gestures"
-  ],
+    "technologies": {
+      "backend": [],
+      "frontend": [],
+      "database": [],
+      "authentication": [],
+      "machine_learning": [
+        "Python",
+        "TensorFlow Lite",
+        "TensorFlow",
+        "MobileNet",
+        "Teachable Machine",
+        "NumPy",
+        "OpenCV"
+      ],
+      "tools": [
+        "VS Code",
+        "Git",
+        "GitHub"
+      ]
+    },
 
-  "architecture": {
-    "architecture_pattern": "Machine Learning Pipeline",
-    "layers": [
-      "Image Capture",
-      "Preprocessing",
-      "TensorFlow Lite Model",
-      "Prediction",
-      "Display Output"
-    ]
-  },
+    "features": [
+      "Real-time gesture recognition",
+      "Image classification using deep learning",
+      "Lightweight TensorFlow Lite model",
+      "Fast prediction speed",
+      "Simple and user-friendly interface",
+      "Recognition of predefined sign language gestures"
+    ],
 
-  "database": {
-    "database_name": "",
-    "tables": []
-  },
+    "architecture": {
+      "pattern": "Machine Learning Pipeline",
+      "layers": [
+        "Image Capture",
+        "Preprocessing",
+        "TensorFlow Lite Model",
+        "Prediction",
+        "Display Output"
+      ]
+    },
 
-  "api_modules": [],
+    "database": {
+      "database_name": "",
+      "tables": [],
+      "relationships": []
+    },
 
-  "security": {
-    "authentication": "",
-    "authorization": "",
-    "password_encryption": ""
-  },
+    "api_modules": [],
 
-  "workflow": [
-    "Capture an image using the camera.",
-    "Preprocess the captured image.",
-    "Pass the image to the TensorFlow Lite model.",
-    "The model predicts the corresponding sign.",
-    "Display the recognized gesture as text to the user."
-  ],
+    "security": {
+      "authentication": "",
+      "authorization": "",
+      "password_encryption": ""
+    },
 
-  "challenges": [
-    "Collecting high-quality training images.",
-    "Improving model accuracy for similar hand gestures.",
-    "Reducing prediction latency for real-time recognition.",
-    "Handling variations in lighting and camera angles.",
-    "Optimizing the model for lightweight deployment."
-  ],
+    "workflow": [
+      "Capture an image using the camera.",
+      "Preprocess the captured image.",
+      "Pass the image to the TensorFlow Lite model.",
+      "The model predicts the corresponding sign.",
+      "Display the recognized gesture as text to the user."
+    ],
 
-  "solutions": [
-    "Used Google's Teachable Machine for model training.",
-    "Converted the trained model to TensorFlow Lite for efficient inference.",
-    "Applied image preprocessing before prediction.",
-    "Tested the model using multiple sample images under different conditions.",
-    "Optimized the application for faster predictions."
-  ],
+    "my_contributions": [
+      "Participated in designing the machine learning pipeline.",
+      "Prepared the training dataset.",
+      "Trained the deep learning model using Teachable Machine.",
+      "Converted the model to TensorFlow Lite.",
+      "Integrated the TensorFlow Lite model into the application.",
+      "Tested prediction accuracy."
+    ],
 
-  "skills_demonstrated": [
-    "Python",
-    "Machine Learning",
-    "Deep Learning",
-    "TensorFlow Lite",
-    "Computer Vision",
-    "Image Classification",
-    "Model Deployment",
-    "Problem Solving"
-  ],
+    "challenges": [
+      "Collecting high-quality training images.",
+      "Improving model accuracy for similar hand gestures.",
+      "Reducing prediction latency for real-time recognition.",
+      "Handling variations in lighting and camera angles.",
+      "Optimizing the model for lightweight deployment."
+    ],
 
-  "learning_outcomes": [
-    "Learned the fundamentals of image classification.",
-    "Gained experience with TensorFlow Lite deployment.",
-    "Understood the complete machine learning workflow.",
-    "Improved knowledge of computer vision techniques.",
-    "Learned model optimization for real-time applications.",
-    "Strengthened debugging and testing skills."
-  ],
+    "solutions": [
+      "Used Google's Teachable Machine for model training.",
+      "Converted the trained model to TensorFlow Lite for efficient inference.",
+      "Applied image preprocessing before prediction.",
+      "Tested the model using multiple sample images under different conditions.",
+      "Optimized the application for faster predictions."
+    ],
 
-  "future_improvements": [
-    "Support complete sentence formation instead of individual gestures.",
-    "Add text-to-speech functionality.",
-    "Recognize a larger sign language vocabulary.",
-    "Support multiple sign languages.",
-    "Deploy as an Android and iOS application.",
-    "Improve accuracy using a custom-trained deep learning model."
-  ],
+    "learnings": [
+      "Learned the fundamentals of image classification.",
+      "Gained experience with TensorFlow Lite deployment.",
+      "Understood the complete machine learning workflow.",
+      "Improved knowledge of computer vision techniques.",
+      "Learned model optimization for real-time applications.",
+      "Strengthened debugging and testing skills."
+    ],
 
-  "github": "",
-  "live_demo": "",
-  "resume_description": "Developed an AI-powered sign language interpretation system using Python, TensorFlow Lite, MobileNet, and computer vision techniques to recognize hand gestures and convert them into readable text."
-}
+    "future_improvements": [
+      "Support complete sentence formation instead of individual gestures.",
+      "Add text-to-speech functionality.",
+      "Recognize a larger sign language vocabulary.",
+      "Support multiple sign languages.",
+      "Deploy as an Android and iOS application.",
+      "Improve accuracy using a custom-trained deep learning model."
+    ],
+
+    "skills_demonstrated": [
+      "Python",
+      "Machine Learning",
+      "Deep Learning",
+      "TensorFlow Lite",
+      "Computer Vision",
+      "Image Classification",
+      "Model Deployment",
+      "Problem Solving"
+    ],
+
+    "github": "",
+    "live_demo": "",
+    "images": [],
+
+    "resume_description": "Developed an AI-powered sign language interpretation system using Python, TensorFlow Lite, MobileNet, and computer vision techniques to recognize hand gestures and convert them into readable text."
+  }
+]
