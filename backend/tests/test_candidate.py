@@ -7,7 +7,7 @@ def test_candidate_profile():
             "name": "Atharva Butte",
             "title": "Backend Developer | Java Developer | Software Development Engineer",
             "location": "Mumbai, Maharashtra, India",
-            "Country": "India",
+            "country": "India",
             "email": "butteatharva2005@gmail.com",
             "phone": "+91 9619849620",
             "summary": (
@@ -22,7 +22,7 @@ def test_candidate_profile():
                 "Java Developer",
                 "Full Stack Developer",
             ],
-        },
+        }, # type: ignore
 
         education=[],
 
@@ -38,7 +38,7 @@ def test_candidate_profile():
             "cloud": ["Vercel", "Supabase"],
             "version_control": ["Git", "GitHub"],
             "other": [],
-        },
+        }, # type: ignore
 
         achievements=[],
 
@@ -49,7 +49,7 @@ def test_candidate_profile():
             "linkedin": "https://www.linkedin.com/in/atharva-butte-b0248a2b5/",
             "leetcode": "https://leetcode.com/u/butteatharva2005/",
             "email": "butteatharva2005@gmail.com",
-        },
+        }, # type: ignore
 
         projects=[],
     )
