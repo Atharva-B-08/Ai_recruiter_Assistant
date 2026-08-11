@@ -75,4 +75,9 @@ Answer the recruiter using only the candidate context above.
             temperature=0.2,
         )
 
-        return response.choices[0].message.content.strip()
+        content = response.choices[0].message.content
+
+        if content is None:
+            raise RuntimeError("Groq returned an empty response.")
+
+        return content.strip()
