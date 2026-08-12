@@ -173,3 +173,56 @@ def test_generate_answer_handles_empty_response():
         assert False
     except RuntimeError as error:
         assert str(error) == "Groq returned an empty response."
+
+
+def test_generate_answer_uses_conversation_history():
+    class FakeMessage:
+        def __init__(self, role, content):
+            self.role = role
+            self.content = content
+
+    class FakeCompletions:
+        def create(self, **kwargs):
+            user_prompt = kwargs["messages"][1]["content"]
+
+            assert "Tell me about your projects." in user_prompt
+            assert "FinTrack, Smart Contact Manager and SignMate" in user_prompt
+            assert "Which one uses JWT?" in user_prompt
+
+            class FakeMessageResponse:
+                content = "FinTrack uses JWT authentication."
+
+            class FakeChoice:
+                message = FakeMessageResponse()
+
+            class FakeResponse:
+                choices = [FakeChoice()]
+
+            return FakeResponse()
+
+    class FakeChat:
+        completions = FakeCompletions()
+
+    class FakeClient:
+        chat = FakeChat()
+
+    service = GroqService(client=FakeClient())
+
+    history = [
+        FakeMessage(
+            "user",
+            "Tell me about your projects.",
+        ),
+        FakeMessage(
+            "assistant",
+            "FinTrack, Smart Contact Manager and SignMate",
+        ),
+    ]
+
+    answer = service.generate_answer(
+        question="Which one uses JWT?",
+        candidate_context="FinTrack uses Java, Spring Boot and JWT.",
+        conversation_history=history,
+    )
+
+    assert answer == "FinTrack uses JWT authentication."

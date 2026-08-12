@@ -9,6 +9,7 @@ def test_chat_endpoint(monkeypatch):
             self,
             question: str,
             candidate_context: str,
+            conversation_history=None,
         ) -> str:
             assert question == "Tell me about Atharva's skills."
             assert "Atharva" in candidate_context
