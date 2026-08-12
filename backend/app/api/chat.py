@@ -1,3 +1,5 @@
+import json
+
 from fastapi import APIRouter, Request
 from fastapi.responses import StreamingResponse
 from groq import RateLimitError
@@ -112,7 +114,11 @@ def chat_stream(
 
     def generate():
         complete_answer = []
-        yield f"CONVERSATION_ID:{conversation_id}\n"
+        # Send conversation ID first.
+        yield (
+            "event: conversation\n"
+            f"data: {json.dumps({'conversation_id': conversation_id})}\n\n"
+        )
         try:
             for chunk in groq_service.stream_answer(
                 question=chat_request.question,
@@ -120,7 +126,10 @@ def chat_stream(
                 conversation_history=conversation_history,
             ):
                 complete_answer.append(chunk)
-                yield chunk
+                yield (
+                    "event: chunk\n"
+                    f"data: {json.dumps({'content': chunk})}\n\n"
+                )
 
             answer = "".join(complete_answer)
 
@@ -136,25 +145,51 @@ def chat_stream(
                 role="assistant",
                 content=answer,
             )
-
+            yield "event: done\ndata: {}\n\n"
+            
         except RateLimitError as error:
             print("GROQ RATE LIMIT ERROR:", error)
 
-            yield (
-                "\n\nI'm temporarily unavailable because my AI service "
+            error_message = (
+                "I'm temporarily unavailable because my AI service "
                 "has reached its usage limit. Please try again later "
                 "or tomorrow."
             )
 
+            error_data = {
+                "type": "rate_limit",
+                "message": error_message,
+            }
+
+            yield (
+                "event: error\n"
+                f"data: {json.dumps(error_data)}\n\n"
+            )
+
+
         except Exception as error:
             print("GROQ GENERAL ERROR:", repr(error))
 
-            yield (
-                "\n\nI'm temporarily unable to process your request. "
+            error_message = (
+                "I'm temporarily unable to process your request. "
                 "Please try again later."
+            )
+
+            error_data = {
+                "type": "general",
+                "message": error_message,
+            }
+
+            yield (
+                "event: error\n"
+                f"data: {json.dumps(error_data)}\n\n"
             )
 
     return StreamingResponse(
         generate(),
-        media_type="text/plain",
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+        },
     )

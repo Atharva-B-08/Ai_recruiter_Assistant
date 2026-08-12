@@ -35,10 +35,19 @@ def test_chat_stream_creates_conversation(monkeypatch):
 
     body = response.text
 
-    assert "CONVERSATION_ID:" in body
+    # Conversation event
+    assert "event: conversation" in body
+    assert "conversation_id" in body
+
+    # Streaming chunks
+    assert "event: chunk" in body
     assert "FinTrack " in body
     assert "is a personal finance " in body
     assert "management application." in body
+
+    # Stream completed successfully
+    assert "event: done" in body
+
 
 def test_chat_stream_continues_conversation(monkeypatch):
     call_count = 0
@@ -101,6 +110,8 @@ def test_chat_stream_continues_conversation(monkeypatch):
     )
 
     with TestClient(app) as client:
+
+        # First request
         first_response = client.post(
             "/chat/stream",
             json={
@@ -112,14 +123,39 @@ def test_chat_stream_continues_conversation(monkeypatch):
 
         first_body = first_response.text
 
-        assert "CONVERSATION_ID:" in first_body
+        # First response should contain SSE conversation event
+        assert "event: conversation" in first_body
+        assert "conversation_id" in first_body
 
-        conversation_id = (
-            first_body
-            .split("CONVERSATION_ID:", 1)[1]
-            .split("\n", 1)[0]
+        # First response should contain streamed answer
+        assert "event: chunk" in first_body
+        assert (
+            "FinTrack is a personal finance "
+            "management application."
+        ) in first_body
+
+        # Stream should finish successfully
+        assert "event: done" in first_body
+
+        # Extract conversation ID from the first response
+        conversation_line = next(
+            line
+            for line in first_body.splitlines()
+            if line.startswith("data: ")
+            and "conversation_id" in line
         )
 
+        import json
+
+        conversation_data = json.loads(
+            conversation_line.removeprefix("data: ")
+        )
+
+        conversation_id = conversation_data["conversation_id"]
+
+        assert conversation_id
+
+        # Second request using the same conversation
         second_response = client.post(
             "/chat/stream",
             json={
@@ -128,11 +164,19 @@ def test_chat_stream_continues_conversation(monkeypatch):
             },
         )
 
-    assert second_response.status_code == 200
+        assert second_response.status_code == 200
 
-    assert (
-        "I used Java, Spring Boot and React."
-        in second_response.text
-    )
+        second_body = second_response.text
 
-    assert call_count == 2
+        # Second response should use the same conversation
+        assert "event: conversation" in second_body
+        assert conversation_id in second_body
+
+        # Second response should contain streamed answer
+        assert "event: chunk" in second_body
+        assert (
+            "I used Java, Spring Boot and React."
+        ) in second_body
+
+        # Stream should finish successfully
+        assert "event: done" in second_body
