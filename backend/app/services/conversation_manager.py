@@ -51,3 +51,22 @@ class ConversationManager:
         )
 
         return conversation
+
+    def get_history(
+        self,
+        conversation_id: str,
+    ) -> list[dict[str, str]]:
+        conversation = self.get_conversation(
+            conversation_id
+        )
+
+        if conversation is None:
+            return []
+
+        return [
+            {
+                "role": message.role,
+                "content": message.content,
+            }
+            for message in conversation.messages
+        ]
