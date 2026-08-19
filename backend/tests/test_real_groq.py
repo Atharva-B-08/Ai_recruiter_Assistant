@@ -12,7 +12,7 @@ from app.services.groq_service import GroqService
 def test_real_groq_answer():
     service = GroqService()
 
-    answer = service.generate_answer(
+    chunks = service.stream_answer(
         question="Tell me about your FinTrack project.",
         candidate_context="""
         Name: Atharva Butte.
@@ -36,8 +36,8 @@ def test_real_groq_answer():
         """,
     )
 
-    assert isinstance(answer, str)
-    assert len(answer.strip()) > 0
+    answer = "".join(chunks)
 
-    print("\nReal Groq answer:")
-    print(answer)
+    assert isinstance(answer, str)
+    assert answer.strip()
+    assert "FinTrack" in answer
