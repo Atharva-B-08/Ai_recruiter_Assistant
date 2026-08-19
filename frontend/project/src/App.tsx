@@ -61,6 +61,11 @@ function App() {
         {
           onConversationId: (id) => setConversationId(id),
           onChunk: (content) => {
+            console.log(
+              "CHUNK RECEIVED:",
+              new Date().toISOString(),
+              JSON.stringify(content),
+            );
             setMessages((prev) => {
               const updated = [...prev];
               const last = updated[updated.length - 1];

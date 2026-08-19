@@ -14,6 +14,7 @@ export interface StreamCallbacks {
   onChunk: (content: string) => void;
   onDone: () => void;
   onError: (error: StreamError) => void;
+  onThinking?: (content: string) => void;
 }
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -44,6 +45,11 @@ function parseSSEStream(
             case 'conversation':
               if (parsed.conversation_id) {
                 callbacks.onConversationId(parsed.conversation_id);
+              }
+              break;
+            case 'thinking':
+              if (parsed.content) {
+                callbacks.onThinking?.(parsed.content);
               }
               break;
             case 'chunk':
@@ -113,6 +119,7 @@ export async function streamChat(
       body: JSON.stringify(body),
       signal,
     });
+    console.log('Response:', response.status, response);
   } catch (err) {
     if ((err as Error).name === 'AbortError') {
       callbacks.onDone();
