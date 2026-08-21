@@ -1,6 +1,7 @@
 from app.models.candidate import CandidateProfile
 from app.services.candidate_loader import load_candidate
 from app.services.context_builder import build_candidate_context
+from app.services.context_retriever import get_relevant_candidate_context
 
 
 class CandidateContextService:
@@ -19,6 +20,16 @@ class CandidateContextService:
             raise RuntimeError("Candidate data has not been loaded.")
 
         return self.candidate
+
+    def get_relevant_context(self, question: str, conversation_history=None) -> str:
+        if self.candidate is None:
+            raise RuntimeError("Candidate data has not been loaded.")
+    
+        return get_relevant_candidate_context(
+            candidate=self.candidate,
+            question=question,
+            conversation_history=conversation_history,
+        )
 
     def get_context(self) -> str:
         if self.context is None:

@@ -47,5 +47,5 @@ def build_candidate_context(candidate: CandidateProfile) -> str:
         _format_section("SOCIAL LINKS", candidate.socials),
         _format_section("PROJECTS", candidate.projects),
     ]
-
+    
     return "\n\n".join(sections)
